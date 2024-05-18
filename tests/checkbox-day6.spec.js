@@ -13,19 +13,22 @@ test("Checkboxes", async ({ page }) => {
 
     await page.goto("https://the-internet.herokuapp.com/checkboxes");
 
-    const checkbox1 = "//input[@type='checkbox'][1]";
-    const checkbox2 = "//input[@type='checkbox'][2]";
+    /* Here we used first and last methods because we already know this page have only two checkboxes */
+    const eleChkBx1 = page.getByRole("checkbox").first();
+    const eleChkBx2 = page.getByRole("checkbox").last();
 
-    const flagChk1 = await page.locator(checkbox1).isChecked();
-    const flagChk2 = await page.locator(checkbox2).isChecked();
+    const flagChkBx1 = await eleChkBx1.isChecked();
+    const flagChkBx2 = await eleChkBx2.isChecked();
 
-    if (flagChk1 == false) {
-        await page.check(checkbox1);
+    if (flagChkBx1 == false) {
+        await eleChkBx1.click();
     }
-    if (flagChk2 == true) {
-        await page.click(checkbox2);
+    if (flagChkBx2 == true) {
+        await eleChkBx2.click();
     }
 
-    expect(await page.locator(checkbox1)).toBeChecked();
-    expect(await page.locator(checkbox2).isChecked()).toBeFalsy();
+    expect(await eleChkBx1).toBeChecked();
+    expect(await eleChkBx2.isChecked()).toBeFalsy();
+
+    await page.waitForTimeout(3000)
 });
