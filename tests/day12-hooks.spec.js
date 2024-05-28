@@ -3,12 +3,12 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Describe block', () => {
 
-    test.beforeAll('beforeAll in describe block', () => console.log('beforeAll in describe block'));
+    test.beforeAll('beforeAll inside describe block', () => console.log('beforeAll inside describe block'));
 
     test('Test 1 in describe block', () => console.log('Test 1 inside describe block'));
     test('Test 2 in describe block', () => console.log('Test 2 inside describe block'));
 
-    test.afterAll('afterAll in describe block', () => console.log('afterAll in describe block'));
+    test.afterAll('afterAll inside describe block', () => console.log('afterAll inside describe block'));
 })
 test.beforeAll('beforeAll outside describe block', () => console.log('beforeAll outside describe block'));
 
