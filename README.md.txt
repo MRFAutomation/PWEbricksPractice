@@ -1,11 +1,11 @@
 Day12 - Hooks
-test.beforeAll and test.afterAll when written inside the describe block are executed for every test.
-Example: if we have 1 test in describe block then test.beforeAll and test.afterAll will execute only once. if we have 3 tests in describe block then test.beforeAll and test.afterAll will execute three times.
+1. First beforeAll outside describe and then beforeAll inside describe block will run.
+2. Then beforeEach and afterEach will run for every test case in describe block.
+3. Then afterAll inside describe block run.
+4. Then beforeEach and afterEach will run for every test case outside describe block.
+5. In the last afterAll outside describe block run.
 
-Similarly test.beforeAll and test.afterAll, beforeEach and beforeAll also running in unexpected order.
-
-One issue is also reported for this behavior: [BUG]Playwright test.beforeAll hook executes more than once in a test suite if any test fails/throw error #8472
------------------------
+----------------------------------------------
 
 Running Playwright tests
 1. "npx playwright test" command to run your tests on all browsers as configured in the playwright.config file.
