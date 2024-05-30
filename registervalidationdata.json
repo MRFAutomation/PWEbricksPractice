@@ -1,0 +1,19 @@
+{
+    "url": "https://ecommerce-playground.lambdatest.io",
+    "firstName6": "Farhan",
+    "lastName6": "Saleem",
+    "firstName1": "F",
+    "lastName1": "S",
+    "firstName32": "ABCDABCDABCDABCDABCDABCDABCDABCD",
+    "lastName32": "ABCDABCDABCDABCDABCDABCDABCDABCD",
+    "firstName33": "ABCDABCDABCDABCDABCDABCDABCDABCD1",
+    "lastName33": "ABCDABCDABCDABCDABCDABCDABCDABCD1",
+    "email": "@gmail.com",
+    "tPhone": "12345678900",
+    "password": "sXSDaE6xON1LR",
+    "agreeText": "I have read and agree to the",
+    "headingText": "Your Account Has Been Created!",
+    "assertText": "Your Account Has Been Created!",
+    "fnAssertText": "First Name must be between 1 and 32 characters!",
+    "lnAssertText": "Last Name must be between 1 and 32 characters!"
+}
