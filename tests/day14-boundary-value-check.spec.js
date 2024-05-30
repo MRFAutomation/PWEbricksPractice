@@ -34,12 +34,12 @@ test.describe('User Registration Suite', () => {
         await page.getByText(data.agreeText).click();
         await page.getByRole('button', { name: 'Continue' }).click();
 
-        if (data.firstName32.length < 1 && data.firstName32.length > 32) {
+        if (data.firstName32.length < 1 || data.firstName32.length > 32) {
             await expect.soft(page.getByText(data.fnAssertText))
                 .toHaveText(data.fnAssertText);
         }
 
-        if (data.lastName32.length < 1 && data.lastName32.length > 32) {
+        if (data.lastName32.length < 1 || data.lastName32.length > 32) {
             await expect.soft(page.getByText(data.lnAssertText))
                 .toHaveText(data.lnAssertText);
         }
