@@ -1,3 +1,10 @@
+Day 18 - chromium.launch, newContext, newPage
+1. Today we implicitly used the fixture: browser, fixture: context and fixture: page in beforeAll methode which earlier done implicitly by playwright engine.
+2. chromium (This object can be used to launch or connect to Chromium, returning instances of Browser).launch (Returns the browser instance) - In this statement we are returning the chrome browser.
+3. newContext() - Creates a new browser context. It won't share cookies/cache with other browser contexts. We can have N number of contexts and they won't sharing data with each other.
+4. newPage - Creates a new page in the browser context
+----------------------------------------------
+
 Day12 - Hooks
 1. First beforeAll outside describe and then beforeAll inside describe block will run.
 2. Then beforeEach and afterEach will run for every test case in describe block.
