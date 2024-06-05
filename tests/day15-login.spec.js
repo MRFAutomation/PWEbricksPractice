@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-const data = JSON.parse(JSON.stringify(require("../logindata.json")));
+const data = JSON.parse(JSON.stringify(require("../data/day15LoginData.json")));
 /*
 You will have to continue writing test cases for Login flow of following website
 https://ecommerce-playground.lambdatest.io/
