@@ -1,9 +1,0 @@
-{
-    "url": "https://ecommerce-playground.lambdatest.io",
-    "email": "mrf.testdevice@gmail.com",
-    "password": "sXSDaE6xON1LR",
-    "loginHeading": "My Account",
-    "errorMsgCredentialsNotMatched": " Warning: No match for E-Mail Address and/or Password.",
-    "errortxt": " Warning: No match for E-Mail Address and/or Password.",
-    "loginLimitExceed": "Warning: Your account has exceeded allowed number of login attempts. Please try again in 1 hour."
-}

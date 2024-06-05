@@ -12,4 +12,10 @@ test("Checkboxes", async ({ page }) => {
     expect(await page.locator(checkbox1)).toBeChecked();
     expect(await page.locator(checkbox2).isChecked()).toBeFalsy();
 
+    /* Using PW locator strategies */
+    /*
+    await page.getByRole("checkbox").first().click();
+    await page.getByRole("checkbox").last().click();
+    await page.getByRole("checkbox").nth(1).click();
+    */
 });

@@ -27,7 +27,7 @@ test("Checkboxes", async ({ page }) => {
         await eleChkBx2.click();
     }
 
-    expect(await eleChkBx1).toBeChecked();
+    await expect(eleChkBx1).toBeChecked();
     expect(await eleChkBx2.isChecked()).toBeFalsy();
 
     await page.waitForTimeout(3000)
