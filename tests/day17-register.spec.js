@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import regData, { } from "../data/day17RegisterData";
+import regData from "../data/day17RegisterData";
 /*
 You need to automate the Registration flow of following website
 https://ecommerce-playground.lambdatest.io/
@@ -35,11 +35,11 @@ test.describe('User Registration Suite', () => {
             await page.fill("#input-confirm", data.password);
 
 
-            await page.getByText('I have read and agree to the ').click();
+            await page.getByText(data.btnTxt).click();
             await page.getByRole('button', { name: 'Continue' }).click();
 
-            await expect(page.getByRole('heading', { name: data.assertTextHeading }))
-                .toContainText(data.assertTextHeading);
+            await expect(page.getByRole('heading', { name: data.assertText }))
+                .toContainText(data.assertText);
             await expect(page.getByRole('link', { name: 'Continue' }))
                 .toBeVisible();
 
