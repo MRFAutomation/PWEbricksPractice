@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 const data = JSON.parse(JSON.stringify(require("../data/day16LoginData.json")));
-import loginData, { } from '../data/day16LoginData';
+import loginData from '../data/day16LoginData';
 /*
 Complete the login and register test cases and take the input from data files which has been taught yesterday for the following website.
  

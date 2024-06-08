@@ -20,8 +20,8 @@ test.describe('User Registration Suite', () => {
         await page.getByRole('button', { name: 'My account' }).hover();
         await page.getByText('Register').click();
 
-        await page.getByPlaceholder('First Name').fill(data.firstName1);
-        await page.getByPlaceholder('Last Name').fill(data.lastName33);
+        await page.getByPlaceholder('First Name').fill(data.firstName33);
+        await page.getByPlaceholder('Last Name').fill(data.lastName1);
 
         await page.getByPlaceholder('E-Mail')
             .fill((Math.random() + 1).toString(36).substring(7) + data.email);
@@ -34,14 +34,20 @@ test.describe('User Registration Suite', () => {
         await page.getByText(data.agreeText).click();
         await page.getByRole('button', { name: 'Continue' }).click();
 
-        if (data.firstName1.length < 1 || data.firstName1.length > 32) {
+        if (data.firstName33.length < 1 || data.firstName33.length > 32) {
             await expect.soft(page.getByText(data.fnAssertText))
                 .toHaveText(data.fnAssertText);
         }
 
-        if (data.lastName33.length < 1 || data.lastName33.length > 32) {
+        if (data.lastName1.length < 1 || data.lastName1.length > 32) {
             await expect.soft(page.getByText(data.lnAssertText))
                 .toHaveText(data.lnAssertText);
         }
+
+        await expect.soft(page.getByRole('heading', { name: data.headingText }))
+            .toContainText(data.assertText);
+
+        await expect.soft(page.getByRole('link', { name: 'Continue' }))
+            .toBeVisible();
     })
 })

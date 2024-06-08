@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
-import day17LoginData, { } from '../data/day17LoginData';
+import loginDataDay17 from '../data/day17LoginData';
+import { off } from 'process';
 
 /*
 If I add the test in a loop then test cases will run according the iterations set in the loop. In the screenshot below, test will run for 5 times according to the loop settings.
@@ -16,7 +17,8 @@ Repeat above steps for Login test cases
 /* Solution */
 test.describe('Login Test Suite', () => {
 
-    for (const loginData of day17LoginData) {
+
+    for (const loginData of loginDataDay17) {
 
         test(`Login Test ${loginData.testId}`, async ({ page }) => {
 

@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import data, { } from "../data/day13RegisterData";
+import data from "../data/day13RegisterData";
 /*
 You need to automate the Registration flow of following website
 https://ecommerce-playground.lambdatest.io/
@@ -35,7 +35,7 @@ test.describe('User Registration Suite', () => {
         await page.getByText('I have read and agree to the ').click();
         await page.getByRole('button', { name: 'Continue' }).click();
 
-        await expect(page.getByRole('heading', { name: 'Your Account Has Been Created!' }))
+        await expect(page.getByRole('heading', { name: data.assertText }))
             .toContainText(data.assertText);
         await expect(page.getByRole('link', { name: 'Continue' }))
             .toBeVisible();
