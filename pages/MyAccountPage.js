@@ -13,6 +13,13 @@ class MyAccountPage {
     }
 
     async verifyAndClickAppleLink() {
+
+        // await page
+        //     .locator("div#entry281_216477 li")
+        //     .filter({ hasText: 'Apple' })
+        //     .getByRole('link', { name: 'Apple' })
+        //     .click();
+
         for (const phone of await this.phones) {
             let phoneTxt = await phone.textContent();
             let trimTxt = phoneTxt.trim();
