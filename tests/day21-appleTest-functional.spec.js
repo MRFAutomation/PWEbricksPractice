@@ -32,7 +32,7 @@ test.describe('Pagination suite', () => {
                 await expect(productsCount).toHaveCount(42);
             }
 
-            await page.waitForTimeout(2000);
+            await page.waitForTimeout(1000);
         }); // End test
     } // End for
 }); // End describe

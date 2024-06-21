@@ -3,6 +3,8 @@ import data from "../data/day20Data";
 
 async function gotoApplePage(page) {
 
+    await page.goto("https://ecommerce-playground.lambdatest.io/");
+
     await page.getByRole('button', { name: 'Mega Menu' }).hover();
 
     await page.
