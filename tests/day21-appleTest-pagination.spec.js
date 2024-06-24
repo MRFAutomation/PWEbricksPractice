@@ -1,4 +1,4 @@
-const { test, chromium } = require("@playwright/test");
+const { test } = require("@playwright/test");
 const Pagination = require('../pages/Pagination');
 const helper = require("../libs/helper");
 

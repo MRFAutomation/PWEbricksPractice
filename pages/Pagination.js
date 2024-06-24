@@ -14,7 +14,7 @@ class Pagination {
 
     async verifyPaginationFunctionality() {
 
-        let firstPage = await this.pageValue.textContent()
+        let firstPage = await this.pageValue.textContent() //15
         if (firstPage === '15') {
             await expect(this.productsCount).toHaveCount(15);
         }

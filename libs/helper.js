@@ -1,28 +1,21 @@
-import data from "../data/day20Data";
+import data from "../data/helperData";
 
 
 async function gotoApplePage(page) {
 
-    await page.goto("https://ecommerce-playground.lambdatest.io/");
+    await Promise.all([
 
-    await page.getByRole('button', { name: 'Mega Menu' }).hover();
+        page.waitForNavigation({ waitUntil: "networkidle" }),
 
-    await page.
-        locator("div#entry281_216477 li").
-        filter({ hasText: 'Apple' }).
-        getByRole('link', { name: 'Apple' }).
-        click();
+        await page.goto(data.webURL),
+        await page.getByRole('button', { name: 'Mega Menu' }).hover(),
 
-    // for (const phone of await this.phones) {
-    //     let phoneTxt = await phone.textContent();
-    //     let trimTxt = phoneTxt.trim();
-
-    //     if (trimTxt.includes("Apple")) {
-    //         await phone.click();
-    //         break;
-    //     }
-    // }
-    await page.waitForTimeout(2000);
+        await page.
+            locator("div#entry281_216477 li").
+            filter({ hasText: 'Apple' }).
+            getByRole('link', { name: 'Apple' }).
+            click(),
+    ])
 }
 module.exports = {
     gotoApplePage
