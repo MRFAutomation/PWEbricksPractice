@@ -2,7 +2,7 @@ const { test, expect, chromium } = require("@playwright/test");
 const Pagination = require('../pages/Pagination');
 const helper = require("../libs/helper");
 
-test('practice', async ({ page }) => {
+test.skip('practice', async ({ page }) => {
 
     await page.goto("https://www.lambdatest.com/selenium-playground/bootstrap-date-picker-demo");
 
@@ -28,4 +28,30 @@ test('practice', async ({ page }) => {
 
 
     await page.waitForTimeout(3000);
+});
+
+test.skip('Auth test1', async ({ browser }) => {
+    const context = await browser.newContext({
+        storageState: "./auth.json"
+    })
+    const page = await context.newPage();
+    await page.goto("https://ecommerce-playground.lambdatest.io/index.php?route=account/edit");
+    await page.waitForTimeout(5000);
+});
+test.skip('Auth xms', async ({ browser }) => {
+    const context = await browser.newContext({
+        storageState: "./auth.json"
+    })
+    const page = await context.newPage();
+    await page.goto("https://cqead6a.xmqa.cloud.com:4443/index_uc.jsp#manage");
+    await page.waitForTimeout(15000);
+});
+test.skip('Auth xms1', async ({ browser }) => {
+    const context = await browser.newContext({
+        storageState: "./auth.json"
+    })
+    const page = await context.newPage();
+    await page.goto("https://cqead6a.xmqa.cloud.com:4443/index_uc.jsp#analyze");
+    await page.getByRole('button', { name: 'Dismiss' }).click();
+    await page.waitForTimeout(5000);
 });
