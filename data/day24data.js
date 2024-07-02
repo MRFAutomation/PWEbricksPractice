@@ -6,5 +6,6 @@ module.exports = {
     addressBookPageURL: "https://ecommerce-playground.lambdatest.io/index.php?route=account/address",
     addressBookHeading: "Address Book Entries",
     editInformationPageURL: "https://ecommerce-playground.lambdatest.io/index.php?route=account/edit",
-    editInformationHeading: "My Account Information"
+    editInformationHeading: "My Account Information",
+    waitURL: "https://ecommerce-playground.lambdatest.io/index.php?route=account/account"
 }
