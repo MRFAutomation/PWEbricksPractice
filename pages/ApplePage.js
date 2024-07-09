@@ -1,7 +1,8 @@
 const { expect } = require("@playwright/test");
-import data from "../data/day20Data";
+import data from "../data/day25data";
+import { ShoppingCartPage } from '../pages/ShoppingCartPage';
 
-class ApplePage {
+export class ApplePage {
     constructor(page) {
         this.page = page;
         this.filterSection = this.page.locator(data.filterSection);
@@ -33,4 +34,20 @@ class ApplePage {
         await expect.soft(this.sizeSection).toBeVisible();
     }
 
-} module.exports = ApplePage;
+    async addMultipleProductsToCart() {
+        await this.page.waitForLoadState();
+
+        for (let i = 32; i <= 36; i += 2) {
+            await this.page.locator(`#mz-product-grid-image-${i}-212439`).hover();
+            await this.page.click(`//button[@class="btn btn-cart cart-${i}"]`);
+            await this.page.waitForTimeout(3000);
+        } // for loop
+    } // addMultipleProductsToCart
+
+    async clickViewCartButton() {
+        await this.page.click(data.viewCartXpath);
+        await this.page.waitForTimeout(2000);
+        await this.page.waitForLoadState();
+    }
+
+}
