@@ -30,8 +30,7 @@ test.describe('Add to Cart test Suite', () => {
         await orderConfirmPage.clickOnConfirmOrderButton();
 
         const orderSuccessPage = new OrderSuccessPage(page);
-        await orderSuccessPage.validateOrderPlacedSuccessfully();
-
+        await orderSuccessPage.validateOrderPlacedSuccessfully();s
     });
 })
 

@@ -1,0 +1,31 @@
+{
+  "name": "playwrightebricks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "practice": "npx playwright test practice-test.spec.js",
+    "day21": "npx playwright test day21-appleTest-pagination.spec.js",
+    "day22": "npx playwright test day22-pagination.spec.js",
+    "demo": "npx playwright test demo-test.spec.js",
+    "day23": "npx playwright test day23-calendar.spec.js",
+    "day24": "npx playwright test day24-login-with-global-setup.spec.js",
+    "day25": "npx playwright test day25-add-to-cart.spec.js",
+    "day25Pom": "npx playwright test day25-add-to-cart-pom.spec.js",
+    "day26": "npx playwright test day26-whishlist.spec.js",
+    "env": "npx playwright test test-env.spec.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@faker-js/faker": "^8.4.1",
+    "@playwright/test": "^1.44.0",
+    "@types/node": "^20.12.11"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "moment": "^2.30.1",
+    "save": "^2.9.0"
+  }
+}
